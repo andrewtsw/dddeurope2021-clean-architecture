@@ -1,8 +1,8 @@
-﻿using DddEurope2021.DataAccess.Interfaces;
+﻿using DddEurope2021.BackgroundJobs.Interfaces;
+using DddEurope2021.DataAccess.Interfaces;
 using DddEurope2021.Domain;
 using DddEurope2021.Integration.Interfaces;
 using DddEurope2021.UseCases.Interfaces;
-using Hangfire;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,11 +13,15 @@ namespace DddEurope2021.UseCases.Implementation
     {
         private readonly IDbContext _context;
         private readonly IOrdersIntegrationService _ordersIntegrationService;
+        private readonly IBackgroundJobService _backgroundJobService;
 
-        public OrdersService(IDbContext context, IOrdersIntegrationService ordersIntegrationService)
+        public OrdersService(IDbContext context, 
+            IOrdersIntegrationService ordersIntegrationService,
+            IBackgroundJobService backgroundJobService)
         {
             _context = context;
             _ordersIntegrationService = ordersIntegrationService;
+            _backgroundJobService = backgroundJobService;
         }
         public async Task<int> CreateOrder(CreateOrderDto orderDto)
         {
@@ -26,13 +30,12 @@ namespace DddEurope2021.UseCases.Implementation
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            BackgroundJob.Enqueue(() => SetExternalIdAsync(order.Id));
+            _backgroundJobService.EnqueueCreateOrder(order.Id);
 
             return order.Id;
-
         }
 
-        public async Task SetExternalIdAsync(int orderId)
+        public async Task CreateExternalOrderAsync(int orderId)
         {
             var order = await _context.Orders
                 .Include(o => o.OrderItems)

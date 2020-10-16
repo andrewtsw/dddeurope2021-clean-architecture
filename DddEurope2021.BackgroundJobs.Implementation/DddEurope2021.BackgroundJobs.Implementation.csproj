@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.16" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.7.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DddEurope2021.BackgroundJobs.Interfaces\DddEurope2021.BackgroundJobs.Interfaces.csproj" />
+    <ProjectReference Include="..\DddEurope2021.UserCases.Interfaces\DddEurope2021.UserCases.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

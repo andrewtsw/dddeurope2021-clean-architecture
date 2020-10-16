@@ -1,3 +1,4 @@
+using DddEurope2021.BackgroundJobs.Implementation;
 using DddEurope2021.DataAccess.Sqlite;
 using DddEurope2021.DataAccess.SqlServer;
 using DddEurope2021.Integration.Implementation;
@@ -28,13 +29,7 @@ namespace DddEurope2021.Web
             services.AddUseCases();
             services.AddOrdersIntegration();
 
-            services.AddHangfire(options => options
-                .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
-                .UseSimpleAssemblyNameTypeSerializer()
-                .UseRecommendedSerializerSettings()
-                .UseSqlServerStorage(Configuration.GetConnectionString("Hangfire")));
-
-            services.AddHangfireServer();
+            services.AddBackgroundJobService(Configuration);
 
             services.AddControllers();
         }

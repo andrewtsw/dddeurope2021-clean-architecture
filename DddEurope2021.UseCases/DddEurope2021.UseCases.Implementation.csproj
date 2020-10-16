@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Hangfire.Core" Version="1.7.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DddEurope2021.BackgroundJobs.Interfaces\DddEurope2021.BackgroundJobs.Interfaces.csproj" />
     <ProjectReference Include="..\DddEurope2021.DataAccess.Interfaces\DddEurope2021.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\DddEurope2021.Entities\DddEurope2021.Entities.csproj" />
     <ProjectReference Include="..\DddEurope2021.Integration.Orders\DddEurope2021.Integration.Interfaces.csproj" />
