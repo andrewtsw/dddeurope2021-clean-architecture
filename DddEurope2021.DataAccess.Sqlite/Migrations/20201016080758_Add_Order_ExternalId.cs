@@ -16,7 +16,7 @@ namespace DddEurope2021.DataAccess.Sqlite.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "ExternalId",
-                table: "Orders");
+                table: "Orders"); 
         }
     }
 }
