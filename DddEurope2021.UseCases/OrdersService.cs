@@ -1,4 +1,4 @@
-﻿using DddEurope2021.DataAccess.SqlServer;
+﻿using DddEurope2021.UseCases.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
@@ -6,8 +6,8 @@ namespace DddEurope2021.UseCases
 {
     public class OrdersService : IOrdersService
     {
-        private readonly ApplicationDbContext _context;
-        public OrdersService(ApplicationDbContext context)
+        private readonly IDbContext _context;
+        public OrdersService(IDbContext context)
         {
             _context = context;
         }

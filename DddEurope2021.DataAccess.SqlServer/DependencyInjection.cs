@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DddEurope2021.UseCases.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +11,9 @@ namespace DddEurope2021.DataAccess.SqlServer
         {
             services
                 .AddDbContext<ApplicationDbContext>(options => options
-                    .UseSqlServer(configuration.GetConnectionString("DddEurope2021_CleanArchitecture")));
+                    .UseSqlServer(configuration.GetConnectionString("DddEurope2021_CleanArchitecture")))
+                .AddScoped<IDbContext>(provider => provider
+                    .GetService<ApplicationDbContext>());
 
             return services;
         }
