@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-namespace DddEurope2021.UseCases.Interfaces
+namespace DddEurope2021.DataAccess.Interfaces
 {
     public interface IDbContext
     {

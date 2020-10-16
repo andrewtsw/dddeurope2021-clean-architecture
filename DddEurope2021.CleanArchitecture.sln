@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.DataAccess.Sq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.DataAccess.Sqlite", "DddEurope2021.DataAccess.Sqlite\DddEurope2021.DataAccess.Sqlite.csproj", "{22FD522C-8CB8-4B33-991F-A311450F8057}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.DataAccess.Interfaces", "DddEurope2021.DataAccess.Interfaces\DddEurope2021.DataAccess.Interfaces.csproj", "{376CC950-DCFC-48BA-8854-CA27204F63BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{22FD522C-8CB8-4B33-991F-A311450F8057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22FD522C-8CB8-4B33-991F-A311450F8057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22FD522C-8CB8-4B33-991F-A311450F8057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376CC950-DCFC-48BA-8854-CA27204F63BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376CC950-DCFC-48BA-8854-CA27204F63BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376CC950-DCFC-48BA-8854-CA27204F63BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376CC950-DCFC-48BA-8854-CA27204F63BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
 ﻿using DddEurope2021.Domain;
-using DddEurope2021.UseCases.Interfaces;
+using DddEurope2021.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using System.Threading.Tasks;

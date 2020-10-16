@@ -1,4 +1,4 @@
-﻿using DddEurope2021.UseCases.Interfaces;
+﻿using DddEurope2021.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
