@@ -2,6 +2,7 @@
 using DddEurope2021.Domain;
 using DddEurope2021.Integration.Interfaces;
 using DddEurope2021.UseCases.Interfaces;
+using Hangfire;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,12 +26,21 @@ namespace DddEurope2021.UseCases.Implementation
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            var externalId = await _ordersIntegrationService.SendOrderAsync(order);
-            order.ExternalId = externalId;
-            await _context.SaveChangesAsync();
+            BackgroundJob.Enqueue(() => SetExternalIdAsync(order.Id));
 
             return order.Id;
 
+        }
+
+        public async Task SetExternalIdAsync(int orderId)
+        {
+            var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .SingleAsync(o => o.Id == orderId);
+
+            var externalId = await _ordersIntegrationService.SendOrderAsync(order);
+            order.ExternalId = externalId;
+            await _context.SaveChangesAsync();
         }
 
         public async Task<GetOrderTotalDto> GetOrderTotalAsync(int id)

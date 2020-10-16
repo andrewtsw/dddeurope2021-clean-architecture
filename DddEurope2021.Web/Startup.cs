@@ -2,6 +2,7 @@ using DddEurope2021.DataAccess.Sqlite;
 using DddEurope2021.DataAccess.SqlServer;
 using DddEurope2021.Integration.Implementation;
 using DddEurope2021.UseCases.Implementation;
+using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,14 @@ namespace DddEurope2021.Web
             services.AddUseCases();
             services.AddOrdersIntegration();
 
+            services.AddHangfire(options => options
+                .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+                .UseSimpleAssemblyNameTypeSerializer()
+                .UseRecommendedSerializerSettings()
+                .UseSqlServerStorage(Configuration.GetConnectionString("Hangfire")));
+
+            services.AddHangfireServer();
+
             services.AddControllers();
         }
 
@@ -39,6 +48,8 @@ namespace DddEurope2021.Web
             }
 
             app.UseHttpsRedirection();
+
+            app.UseHangfireDashboard();
 
             app.UseRouting();
 
