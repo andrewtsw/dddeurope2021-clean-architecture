@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.Web", "DddEur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.Entities", "DddEurope2021.Entities\DddEurope2021.Entities.csproj", "{4187021D-AB33-4305-A725-46055D8BB5D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.UseCases", "DddEurope2021.UseCases\DddEurope2021.UseCases.csproj", "{DC47078E-B605-4D7F-9699-95435A03535A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.UseCases.Implementation", "DddEurope2021.UseCases\DddEurope2021.UseCases.Implementation.csproj", "{DC47078E-B605-4D7F-9699-95435A03535A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.DataAccess.SqlServer", "DddEurope2021.DataAccess.SqlServer\DddEurope2021.DataAccess.SqlServer.csproj", "{97AE41DD-2145-4046-892B-79C9CA0E6052}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.DataAccess.Interfaces", "DddEurope2021.DataAccess.Interfaces\DddEurope2021.DataAccess.Interfaces.csproj", "{376CC950-DCFC-48BA-8854-CA27204F63BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.Controllers", "DddEurope2021.Controllers\DddEurope2021.Controllers.csproj", "{A60C05B0-064B-4285-84CA-8388B6B146E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.UserCases.Interfaces", "DddEurope2021.UserCases.Interfaces\DddEurope2021.UserCases.Interfaces.csproj", "{BB157461-C571-40F7-ACF4-583F467E621B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A60C05B0-064B-4285-84CA-8388B6B146E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A60C05B0-064B-4285-84CA-8388B6B146E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A60C05B0-064B-4285-84CA-8388B6B146E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB157461-C571-40F7-ACF4-583F467E621B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB157461-C571-40F7-ACF4-583F467E621B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB157461-C571-40F7-ACF4-583F467E621B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB157461-C571-40F7-ACF4-583F467E621B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

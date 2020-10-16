@@ -1,4 +1,4 @@
-﻿using DddEurope2021.UseCases;
+﻿using DddEurope2021.UseCases.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

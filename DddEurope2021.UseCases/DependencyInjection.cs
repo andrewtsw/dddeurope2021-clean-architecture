@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DddEurope2021.UseCases.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace DddEurope2021.UseCases
+namespace DddEurope2021.UseCases.Implementation
 {
     public static class DependencyInjection
     {

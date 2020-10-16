@@ -1,8 +1,9 @@
 ﻿using DddEurope2021.DataAccess.Interfaces;
+using DddEurope2021.UseCases.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-namespace DddEurope2021.UseCases
+namespace DddEurope2021.UseCases.Implementation
 {
     public class OrdersService : IOrdersService
     {

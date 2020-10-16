@@ -1,6 +1,6 @@
 using DddEurope2021.DataAccess.Sqlite;
 using DddEurope2021.DataAccess.SqlServer;
-using DddEurope2021.UseCases;
+using DddEurope2021.UseCases.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

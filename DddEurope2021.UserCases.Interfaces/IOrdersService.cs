@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DddEurope2021.UseCases
+namespace DddEurope2021.UseCases.Interfaces
 {
     public interface IOrdersService
     {
