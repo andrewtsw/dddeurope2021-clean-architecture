@@ -12,17 +12,15 @@ namespace DddEurope2021.UseCases.Implementation
     public class OrdersService : IOrdersService
     {
         private readonly IDbContext _context;
-        private readonly IOrdersIntegrationService _ordersIntegrationService;
         private readonly IBackgroundJobService _backgroundJobService;
 
         public OrdersService(IDbContext context, 
-            IOrdersIntegrationService ordersIntegrationService,
             IBackgroundJobService backgroundJobService)
         {
             _context = context;
-            _ordersIntegrationService = ordersIntegrationService;
             _backgroundJobService = backgroundJobService;
         }
+
         public async Task<int> CreateOrder(CreateOrderDto orderDto)
         {
             var order = CreateOrderFromDto(orderDto);
@@ -33,17 +31,6 @@ namespace DddEurope2021.UseCases.Implementation
             _backgroundJobService.EnqueueCreateOrder(order.Id);
 
             return order.Id;
-        }
-
-        public async Task CreateExternalOrderAsync(int orderId)
-        {
-            var order = await _context.Orders
-                .Include(o => o.OrderItems)
-                .SingleAsync(o => o.Id == orderId);
-
-            var externalId = await _ordersIntegrationService.SendOrderAsync(order);
-            order.ExternalId = externalId;
-            await _context.SaveChangesAsync();
         }
 
         public async Task<GetOrderTotalDto> GetOrderTotalAsync(int id)
@@ -77,6 +64,30 @@ namespace DddEurope2021.UseCases.Implementation
 
                 }).ToList()
             };
+        }
+    }
+
+    public class OrdersService1 : IOrdersService1
+    {
+        private readonly IDbContext _context;
+        private readonly IOrdersIntegrationService _ordersIntegrationService;
+
+        public OrdersService1(IDbContext context,
+            IOrdersIntegrationService ordersIntegrationService)
+        {
+            _context = context;
+            _ordersIntegrationService = ordersIntegrationService;
+        }
+
+        public async Task CreateExternalOrderAsync(int orderId)
+        {
+            var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .SingleAsync(o => o.Id == orderId);
+
+            var externalId = await _ordersIntegrationService.SendOrderAsync(order);
+            order.ExternalId = externalId;
+            await _context.SaveChangesAsync();
         }
     }
 }

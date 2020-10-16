@@ -6,9 +6,9 @@ namespace DddEurope2021.BackgroundJobs.Implementation
 {
     public class BackgroundJobService : IBackgroundJobService
     {
-        private readonly IOrdersService _ordersService;
+        private readonly IOrdersService1 _ordersService;
 
-        public BackgroundJobService(IOrdersService ordersService)
+        public BackgroundJobService(IOrdersService1 ordersService)
         {
             _ordersService = ordersService;
         }

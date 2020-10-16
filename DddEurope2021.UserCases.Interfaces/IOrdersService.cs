@@ -7,7 +7,10 @@ namespace DddEurope2021.UseCases.Interfaces
         Task<GetOrderTotalDto> GetOrderTotalAsync(int id);
 
         Task<int> CreateOrder(CreateOrderDto orderDto);
+    }
 
+    public interface IOrdersService1
+    {
         Task CreateExternalOrderAsync(int id);
     }
 }
