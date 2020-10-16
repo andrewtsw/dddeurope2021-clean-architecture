@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DddEurope2021.Controllers\DddEurope2021.Controllers.csproj" />
     <ProjectReference Include="..\DddEurope2021.DataAccess.Sqlite\DddEurope2021.DataAccess.Sqlite.csproj" />
     <ProjectReference Include="..\DddEurope2021.DataAccess.SqlServer\DddEurope2021.DataAccess.SqlServer.csproj" />
     <ProjectReference Include="..\DddEurope2021.UseCases\DddEurope2021.UseCases.csproj" />
