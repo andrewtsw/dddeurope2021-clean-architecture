@@ -10,22 +10,22 @@ namespace DddEurope2021.Web.Controllers
     [Route("[controller]")]
     public class OrdersController : ControllerBase
     {
-        private readonly IMediator _mediator;
-        public OrdersController(IMediator mediator)
+        private readonly ISender _sender;
+        public OrdersController(ISender sender)
         {
-            _mediator = mediator;
+            _sender = sender;
         }
 
         [HttpGet("{id}")]
         public async Task<OrderTotalDto> GetById(int id)
         {
-            return await _mediator.Send(new GetOrderTotalQuery(id));
+            return await _sender.Send(new GetOrderTotalQuery(id));
         }
 
         [HttpPost]
         public async Task<int> CreateOrder(CreateOrderDto orderDto)
         {
-            return await _mediator.Send(new CreateOrderCommand(orderDto));
+            return await _sender.Send(new CreateOrderCommand(orderDto));
         }
     }
 }

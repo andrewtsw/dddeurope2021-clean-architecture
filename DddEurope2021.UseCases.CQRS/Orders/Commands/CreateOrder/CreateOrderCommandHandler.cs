@@ -1,6 +1,6 @@
-﻿using DddEurope2021.BackgroundJobs.Interfaces;
-using DddEurope2021.DataAccess.Interfaces;
+﻿using DddEurope2021.DataAccess.Interfaces;
 using DddEurope2021.Domain;
+using DddEurope2021.UseCases.CQRS.Orders.Events;
 using MediatR;
 using System.Linq;
 using System.Threading;
@@ -11,13 +11,12 @@ namespace DddEurope2021.UseCases.CQRS.Orders.Commands
     internal class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int>
     {
         private readonly IDbContext _context;
-        private readonly IBackgroundJobService _backgroundJobService;
+        private readonly IPublisher _publisher;
 
-        public CreateOrderCommandHandler(IDbContext context,
-            IBackgroundJobService backgroundJobService)
+        public CreateOrderCommandHandler(IDbContext context, IPublisher publisher)
         {
             _context = context;
-            _backgroundJobService = backgroundJobService;
+            _publisher = publisher;
         }
 
         public async Task<int> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
@@ -27,7 +26,7 @@ namespace DddEurope2021.UseCases.CQRS.Orders.Commands
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            _backgroundJobService.EnqueueCreateOrder(order.Id);
+            await _publisher.Publish(new OrderCreated(order.Id));
 
             return order.Id;
         }
