@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DddEurope2021.DataAccess.SqlServer.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(SqlServerDbContext))]
     [Migration("20201016045054_Add_Order_Comment")]
     partial class Add_Order_Comment
     {

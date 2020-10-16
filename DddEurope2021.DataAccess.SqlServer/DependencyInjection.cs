@@ -10,10 +10,10 @@ namespace DddEurope2021.DataAccess.SqlServer
         public static IServiceCollection AddDataAccessSqlServer(this IServiceCollection services, IConfiguration configuration)
         {
             services
-                .AddDbContext<ApplicationDbContext>(options => options
-                    .UseSqlServer(configuration.GetConnectionString("DddEurope2021_CleanArchitecture")))
+                .AddDbContext<SqlServerDbContext>(options => options
+                    .UseSqlServer(configuration.GetConnectionString("DddEurope2021_SqlServer")))
                 .AddScoped<IDbContext>(provider => provider
-                    .GetService<ApplicationDbContext>());
+                    .GetService<SqlServerDbContext>());
 
             return services;
         }

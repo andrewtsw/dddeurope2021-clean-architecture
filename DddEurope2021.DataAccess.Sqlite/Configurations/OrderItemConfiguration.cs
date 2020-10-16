@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DddEurope2021.DataAccess.SqlServer.Configurations
+namespace DddEurope2021.DataAccess.Sqlite.Configurations
 {
     public class OrderItemConfiguration : IEntityTypeConfiguration<OrderItem>
     {

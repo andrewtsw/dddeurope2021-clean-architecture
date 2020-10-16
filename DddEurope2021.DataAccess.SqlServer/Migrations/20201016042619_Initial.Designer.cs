@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DddEurope2021.DataAccess.SqlServer.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(SqlServerDbContext))]
     [Migration("20201016042619_Initial")]
     partial class Initial
     {

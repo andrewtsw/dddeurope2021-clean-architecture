@@ -2,12 +2,13 @@
 using DddEurope2021.UseCases.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace DddEurope2021.DataAccess.SqlServer
 {
-    public class ApplicationDbContext : DbContext, IDbContext
+    public class SqlServerDbContext : DbContext, IDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public SqlServerDbContext(DbContextOptions<SqlServerDbContext> options)
             : base(options)
         {
         }
@@ -17,6 +18,11 @@ namespace DddEurope2021.DataAccess.SqlServer
         public DbSet<OrderItem> OrderItems { get; set; }
 
         public DbSet<Product> Products { get; set; }
+
+        public Task<int> SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

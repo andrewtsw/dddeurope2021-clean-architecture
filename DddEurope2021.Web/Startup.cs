@@ -1,3 +1,4 @@
+using DddEurope2021.DataAccess.Sqlite;
 using DddEurope2021.DataAccess.SqlServer;
 using DddEurope2021.UseCases;
 using Microsoft.AspNetCore.Builder;
@@ -20,7 +21,8 @@ namespace DddEurope2021.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDataAccessSqlServer(Configuration);
+            //services.AddDataAccessSqlServer(Configuration);
+            services.AddDataAccessSqlite(Configuration);
             services.AddUseCases();
 
             services.AddControllers();
