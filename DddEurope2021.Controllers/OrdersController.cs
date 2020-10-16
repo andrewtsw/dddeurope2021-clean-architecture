@@ -15,9 +15,15 @@ namespace DddEurope2021.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<decimal> GetById(int id)
+        public async Task<GetOrderTotalDto> GetById(int id)
         {
-            return await _ordersService.CalculateOrderTotalAsync(id);
+            return await _ordersService.GetOrderTotalAsync(id);
+        }
+
+        [HttpPost]
+        public async Task<int> CreateOrder(CreateOrderDto orderDto)
+        {
+            return await _ordersService.CreateOrder(orderDto);
         }
     }
 }

@@ -4,6 +4,8 @@ namespace DddEurope2021.UseCases.Interfaces
 {
     public interface IOrdersService
     {
-        Task<decimal> CalculateOrderTotalAsync(int id);
+        Task<GetOrderTotalDto> GetOrderTotalAsync(int id);
+
+        Task<int> CreateOrder(CreateOrderDto orderDto);
     }
 }

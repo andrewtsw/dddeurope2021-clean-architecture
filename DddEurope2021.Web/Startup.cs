@@ -1,5 +1,6 @@
 using DddEurope2021.DataAccess.Sqlite;
 using DddEurope2021.DataAccess.SqlServer;
+using DddEurope2021.Integration.Implementation;
 using DddEurope2021.UseCases.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,6 +25,7 @@ namespace DddEurope2021.Web
             //services.AddDataAccessSqlServer(Configuration);
             services.AddDataAccessSqlite(Configuration);
             services.AddUseCases();
+            services.AddOrdersIntegration();
 
             services.AddControllers();
         }

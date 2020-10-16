@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DddEurope2021.DataAccess.Interfaces\DddEurope2021.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\DddEurope2021.Entities\DddEurope2021.Entities.csproj" />
+    <ProjectReference Include="..\DddEurope2021.Integration.Orders\DddEurope2021.Integration.Interfaces.csproj" />
     <ProjectReference Include="..\DddEurope2021.UserCases.Interfaces\DddEurope2021.UserCases.Interfaces.csproj" />
   </ItemGroup>
 
