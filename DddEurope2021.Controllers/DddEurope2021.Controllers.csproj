@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DddEurope2021.UserCases.Interfaces\DddEurope2021.UserCases.Interfaces.csproj" />
+    <ProjectReference Include="..\DddEurope2021.UseCases.CQRS\DddEurope2021.UseCases.CQRS.csproj" />
   </ItemGroup>
 
 </Project>

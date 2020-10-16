@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.Web", "DddEur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.Entities", "DddEurope2021.Entities\DddEurope2021.Entities.csproj", "{4187021D-AB33-4305-A725-46055D8BB5D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.UseCases.Implementation", "DddEurope2021.UseCases\DddEurope2021.UseCases.Implementation.csproj", "{DC47078E-B605-4D7F-9699-95435A03535A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.DataAccess.SqlServer", "DddEurope2021.DataAccess.SqlServer\DddEurope2021.DataAccess.SqlServer.csproj", "{97AE41DD-2145-4046-892B-79C9CA0E6052}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.DataAccess.Sqlite", "DddEurope2021.DataAccess.Sqlite\DddEurope2021.DataAccess.Sqlite.csproj", "{22FD522C-8CB8-4B33-991F-A311450F8057}"
@@ -17,15 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.DataAccess.In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.Controllers", "DddEurope2021.Controllers\DddEurope2021.Controllers.csproj", "{A60C05B0-064B-4285-84CA-8388B6B146E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.UserCases.Interfaces", "DddEurope2021.UserCases.Interfaces\DddEurope2021.UserCases.Interfaces.csproj", "{BB157461-C571-40F7-ACF4-583F467E621B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.Integration.Interfaces", "DddEurope2021.Integration.Orders\DddEurope2021.Integration.Interfaces.csproj", "{E8278996-9A4A-4FB0-AF0E-068DC42B4503}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.Integration.Implementation", "DddEurope2021.Integration.Implementation\DddEurope2021.Integration.Implementation.csproj", "{C2D8851D-C6D9-4F7A-BFBD-06BA5FD18011}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.BackgroundJobs.Interfaces", "DddEurope2021.BackgroundJobs.Interfaces\DddEurope2021.BackgroundJobs.Interfaces.csproj", "{E220A764-8F02-4D30-83B3-D6E39DCCDFCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.BackgroundJobs.Interfaces", "DddEurope2021.BackgroundJobs.Interfaces\DddEurope2021.BackgroundJobs.Interfaces.csproj", "{E220A764-8F02-4D30-83B3-D6E39DCCDFCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.BackgroundJobs.Implementation", "DddEurope2021.BackgroundJobs.Implementation\DddEurope2021.BackgroundJobs.Implementation.csproj", "{CC674667-83D7-4B67-A762-A3D7DEF553EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DddEurope2021.BackgroundJobs.Implementation", "DddEurope2021.BackgroundJobs.Implementation\DddEurope2021.BackgroundJobs.Implementation.csproj", "{CC674667-83D7-4B67-A762-A3D7DEF553EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddEurope2021.UseCases.CQRS", "DddEurope2021.UseCases.CQRS\DddEurope2021.UseCases.CQRS.csproj", "{44092C31-BBC2-4570-B99F-68BC4A2B7990}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{4187021D-AB33-4305-A725-46055D8BB5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4187021D-AB33-4305-A725-46055D8BB5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4187021D-AB33-4305-A725-46055D8BB5D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC47078E-B605-4D7F-9699-95435A03535A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC47078E-B605-4D7F-9699-95435A03535A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC47078E-B605-4D7F-9699-95435A03535A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC47078E-B605-4D7F-9699-95435A03535A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{97AE41DD-2145-4046-892B-79C9CA0E6052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{97AE41DD-2145-4046-892B-79C9CA0E6052}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97AE41DD-2145-4046-892B-79C9CA0E6052}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,10 +55,6 @@ Global
 		{A60C05B0-064B-4285-84CA-8388B6B146E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A60C05B0-064B-4285-84CA-8388B6B146E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A60C05B0-064B-4285-84CA-8388B6B146E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB157461-C571-40F7-ACF4-583F467E621B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB157461-C571-40F7-ACF4-583F467E621B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB157461-C571-40F7-ACF4-583F467E621B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB157461-C571-40F7-ACF4-583F467E621B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8278996-9A4A-4FB0-AF0E-068DC42B4503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8278996-9A4A-4FB0-AF0E-068DC42B4503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8278996-9A4A-4FB0-AF0E-068DC42B4503}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +71,10 @@ Global
 		{CC674667-83D7-4B67-A762-A3D7DEF553EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC674667-83D7-4B67-A762-A3D7DEF553EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC674667-83D7-4B67-A762-A3D7DEF553EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44092C31-BBC2-4570-B99F-68BC4A2B7990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44092C31-BBC2-4570-B99F-68BC4A2B7990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44092C31-BBC2-4570-B99F-68BC4A2B7990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44092C31-BBC2-4570-B99F-68BC4A2B7990}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

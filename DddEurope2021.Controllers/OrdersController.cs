@@ -1,4 +1,6 @@
-﻿using DddEurope2021.UseCases.Interfaces;
+﻿using DddEurope2021.UseCases.CQRS.Orders.Commands;
+using DddEurope2021.UseCases.CQRS.Orders.Queries.GetOrderTotal;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -8,22 +10,22 @@ namespace DddEurope2021.Web.Controllers
     [Route("[controller]")]
     public class OrdersController : ControllerBase
     {
-        private readonly IOrdersService _ordersService;
-        public OrdersController(IOrdersService ordersService)
+        private readonly IMediator _mediator;
+        public OrdersController(IMediator mediator)
         {
-            _ordersService = ordersService;
+            _mediator = mediator;
         }
 
         [HttpGet("{id}")]
-        public async Task<GetOrderTotalDto> GetById(int id)
+        public async Task<OrderTotalDto> GetById(int id)
         {
-            return await _ordersService.GetOrderTotalAsync(id);
+            return await _mediator.Send(new GetOrderTotalQuery(id));
         }
 
         [HttpPost]
         public async Task<int> CreateOrder(CreateOrderDto orderDto)
         {
-            return await _ordersService.CreateOrder(orderDto);
+            return await _mediator.Send(new CreateOrderCommand(orderDto));
         }
     }
 }

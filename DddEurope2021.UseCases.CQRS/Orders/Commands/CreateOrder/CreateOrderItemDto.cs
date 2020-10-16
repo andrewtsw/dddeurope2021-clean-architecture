@@ -1,4 +1,4 @@
-﻿namespace DddEurope2021.UseCases.Interfaces
+﻿namespace DddEurope2021.UseCases.CQRS.Orders.Commands
 {
     public class CreateOrderItemDto
     {
